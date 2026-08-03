@@ -3,6 +3,7 @@ import ServicesPreview from "@/components/sections/ServicesPreview";
 import BeforeAfter from "@/components/ui/BeforeAfter";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Cta from "@/components/sections/Cta";
+import { MapPinIcon, SparklesIcon } from "@heroicons/react/24/outline";
 const img = {
   hero: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1600&q=85",
   a: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80",
@@ -23,7 +24,7 @@ export default function Home() {
           <div className="hex-bg absolute right-0 top-0 h-full w-1/3" />
           <div className="relative flex min-h-[650px] max-w-3xl flex-col justify-center px-7 py-20 text-white md:px-16">
             <p className="mb-6 text-xs font-bold uppercase tracking-[.26em] text-aqua">
-              Detailing intérieur · Bruxelles
+              Detailing intérieur · Liège
             </p>
             <h1 className="display text-5xl sm:text-7xl lg:text-[88px]">
               Votre intérieur.
@@ -31,8 +32,8 @@ export default function Home() {
               <span className="text-aqua">Comme neuf.</span>
             </h1>
             <p className="mt-7 max-w-lg text-base leading-7 text-white/65">
-              Nettoyage, rénovation et protection haut de gamme pour retrouver
-              le plaisir d’un habitacle irréprochable.
+              Chaque véhicule est différent. J'adapte le nettoyage à son état
+              pour un résultat soigné jusque dans les moindres détails.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
@@ -50,6 +51,24 @@ export default function Home() {
             </div>
           </div>
           <div className="absolute bottom-7 right-8 hidden gap-8 text-white md:flex">
+            <div className="flex flex-col items-center space-y-1">
+              <b className="font-display">
+                <MapPinIcon className="h-8 w-8" />
+              </b>
+              <span className="block text-[10px] uppercase tracking-widest text-white/50">
+                Province de Liège
+              </span>
+            </div>
+            <div className="flex flex-col items-center space-y-1">
+              <b className="font-display text-2xl">
+                <SparklesIcon className="h-8 w-8" />
+              </b>
+              <span className="block text-[10px] uppercase tracking-widest text-white/50">
+                Service personnalisé
+              </span>
+            </div>
+          </div>
+          {/* <div className="absolute bottom-7 right-8 hidden gap-8 text-white md:flex">
             <div>
               <b className="font-display text-2xl">250+</b>
               <span className="block text-[10px] uppercase tracking-widest text-white/50">
@@ -62,7 +81,7 @@ export default function Home() {
                 avis clients
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <ServicesPreview />
