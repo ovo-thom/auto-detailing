@@ -90,7 +90,7 @@ export default function Home() {
           <SectionTitle
             eyebrow="Avant / Après"
             title="Le détail change tout."
-            text="Faites glisser le curseur pour révéler la transformation."
+            text="Faites glisser le curseur pour voir le travail réalisé."
           />
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {[
