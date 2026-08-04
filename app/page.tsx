@@ -4,12 +4,7 @@ import BeforeAfter from "@/components/ui/BeforeAfter";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Cta from "@/components/sections/Cta";
 import { MapPinIcon, SparklesIcon } from "@heroicons/react/24/outline";
-const img = {
-  hero: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1600&q=85",
-  a: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80",
-  b: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=900&q=80",
-  c: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80",
-};
+import { homeImages as img } from "@/lib/images";
 export default function Home() {
   return (
     <>
@@ -93,12 +88,13 @@ export default function Home() {
             text="Faites glisser le curseur pour voir le travail réalisé."
           />
           <div className="mt-14 grid gap-8 md:grid-cols-3">
-            {[
-              [img.a, img.b, "Audi A3 · Sellerie"],
-              [img.b, img.c, "BMW Série 3 · Habitacle"],
-              [img.c, img.a, "Porsche Macan · Finitions"],
-            ].map((x, i) => (
-              <BeforeAfter key={i} before={x[0]} after={x[1]} label={x[2]} />
+            {img.comparisons.map((item) => (
+              <BeforeAfter
+                key={item.label}
+                before={item.before}
+                after={item.after}
+                label={item.label}
+              />
             ))}
           </div>
         </div>
@@ -107,7 +103,7 @@ export default function Home() {
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
           <div className="relative">
             <img
-              src={img.b}
+              src={img.comparisons[0].after}
               alt="Travail précis de detailing"
               className="aspect-[4/5] w-full rounded-[2.5rem] object-cover"
             />

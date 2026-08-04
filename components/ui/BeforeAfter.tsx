@@ -19,14 +19,14 @@ export default function BeforeAfter({
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div
-          className="absolute inset-0 overflow-hidden"
+          className="absolute inset-y-0 left-0 overflow-hidden"
           style={{ width: `${pos}%` }}
         >
           <img
             src={before}
             alt={`${label} avant`}
-            className="h-full max-w-none object-cover grayscale"
-            style={{ width: "var(--comparison-width, 600px)" }}
+            className="absolute inset-y-0 left-0 h-full w-full max-w-none object-cover "
+            style={{ width: `${10000 / pos}%` }}
           />
         </div>
         <div className="absolute bottom-4 left-4 rounded-full bg-ink/80 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
