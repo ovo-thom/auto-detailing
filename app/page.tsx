@@ -103,7 +103,7 @@ export default function Home() {
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
           <div className="relative">
             <img
-              src={img.comparisons[0].after}
+              src={img.workMethodImage}
               alt="Travail précis de detailing"
               className="aspect-[4/5] w-full rounded-[2.5rem] object-cover"
             />
@@ -116,21 +116,21 @@ export default function Home() {
           </div>
           <div className="lg:pl-12">
             <SectionTitle
-              eyebrow="Notre approche"
+              eyebrow="Pourquoi Atelier Nacre"
               title="De la patience. De la précision."
-              text="Chez Atelier Nacre, aucun travail à la chaîne. Chaque véhicule reçoit un diagnostic attentif, des produits adaptés et le temps nécessaire pour un résultat durable."
+              text="Chaque véhicule est nettoyé avec le même soin, qu'il s'agisse d'une citadine, d'un SUV ou d'un utilitaire. J'utilise des produits adaptés à chaque surface et je prends le temps nécessaire pour obtenir un résultat propre et durable."
             />
             <div className="mt-9 grid grid-cols-2 gap-6 border-t border-black/10 pt-7">
               <div>
-                <b className="font-display text-lg">Produits sûrs</b>
+                <b className="font-display text-lg">Produits adaptés</b>
                 <p className="mt-2 text-sm text-black/45">
-                  Pour vos surfaces et votre santé.
+                  Des produits adaptés à chaque matériau.
                 </p>
               </div>
               <div>
                 <b className="font-display text-lg">Résultat durable</b>
                 <p className="mt-2 text-sm text-black/45">
-                  Protection et conseils d’entretien.
+                  Une finition soignée à chaque intervention
                 </p>
               </div>
             </div>

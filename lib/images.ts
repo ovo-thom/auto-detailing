@@ -1,5 +1,6 @@
 export const homeImages = {
   hero: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1600&q=85",
+  workMethodImage: "/images/apres_cockpit_cadre.webp",
   comparisons: [
     {
       label: "Golf 8 · Habitacle avant",
