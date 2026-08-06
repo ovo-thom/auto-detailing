@@ -13,8 +13,8 @@ export default function Cta() {
               Prêt à retrouver un intérieur impeccable ?
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-black/60">
-              Envoyez quelques photos et recevez une estimation personnalisée
-              sous 24 heures.
+              Une question sur la formule adaptée à votre véhicule ?
+              Contactez-moi.
             </p>
             <Link href="/contact" className="btn-primary mt-8">
               Demander mon devis →
