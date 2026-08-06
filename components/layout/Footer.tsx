@@ -17,26 +17,32 @@ export default function Footer() {
             Navigation
           </p>
           <div className="grid gap-2 text-sm text-white/60">
-            <Link href="/prestations" className="hover:text-aqua">Prestations & tarifs</Link>
-            <Link href="/realisations" className="hover:text-aqua">Réalisations</Link>
-            <Link href="/contact" className="hover:text-aqua">Contact</Link>
+            <Link href="/prestations" className="hover:text-aqua">
+              Prestations & tarifs
+            </Link>
+            <Link href="/realisations" className="hover:text-aqua">
+              Réalisations
+            </Link>
+            <Link href="/contact" className="hover:text-aqua">
+              Contact
+            </Link>
           </div>
         </div>
         <div>
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-aqua">
-            Nous trouver
+            contact
           </p>
           <p className="text-sm leading-7 text-white/60">
-            Rue de l’Atelier 24, 1000 Bruxelles
+            Province de Liège
             <br />
-            +32 470 12 34 56
+            +32 491 95 41 61
             <br />
             bonjour@ateliernacre.be
           </p>
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-xs text-white/35">
-        © 2026 Atelier Nacre · Sur rendez-vous uniquement
+        © 2026 Atelier Nacre · Tous droits réservés
       </div>
     </footer>
   );
