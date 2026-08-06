@@ -24,10 +24,10 @@ body {
 .eyebrow {
   @apply mb-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.24em] text-aqua-dark;
 }
-.eyebrow:before {
+/* .eyebrow:before {
   content: "";
   @apply h-px w-8 bg-aqua;
-}
+} */
 .display {
   @apply font-display font-semibold leading-[.98] tracking-[-.045em];
 }

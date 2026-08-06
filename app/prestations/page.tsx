@@ -1,104 +1,46 @@
 import PageHero from "@/components/ui/PageHero";
 import Cta from "@/components/sections/Cta";
-const plans = [
-  {
-    name: "Essentiel",
-    price: "89",
-    time: "2–3h",
-    desc: "Pour un entretien régulier et soigné.",
-    items: [
-      "Aspiration complète",
-      "Dépoussiérage minutieux",
-      "Nettoyage plastiques",
-      "Vitres intérieures",
-      "Parfum neutre",
-    ],
-  },
-  {
-    name: "Renouveau",
-    price: "169",
-    time: "4–5h",
-    desc: "Le grand nettoyage en profondeur.",
-    popular: true,
-    items: [
-      "Tout l’Essentiel",
-      "Injection-extraction textiles",
-      "Détachage ciblé",
-      "Nettoyage des ceintures",
-      "Désinfection vapeur",
-      "Dressing plastiques",
-    ],
-  },
-  {
-    name: "Signature",
-    price: "249",
-    time: "6–8h",
-    desc: "Notre expérience la plus complète.",
-    items: [
-      "Tout le Renouveau",
-      "Soin complet du cuir",
-      "Protection anti-UV",
-      "Traitement anti-odeurs",
-      "Finitions au pinceau",
-      "Contrôle qualité final",
-    ],
-  },
-];
-const faq = [
-  [
-    "Combien de temps faut-il laisser le véhicule ?",
-    "De 2 à 8 heures selon la formule et l’état de l’habitacle. Une estimation précise vous est communiquée avant le rendez-vous.",
-  ],
-  [
-    "Les taches partent-elles toutes ?",
-    "Nous obtenons d’excellents résultats, mais certaines taches anciennes ou ayant altéré les fibres peuvent rester légèrement visibles.",
-  ],
-  [
-    "Puis-je récupérer la voiture avec les sièges secs ?",
-    "Oui. Notre matériel d’extraction et de séchage permet une restitution sèche ou très légèrement humide selon la saison.",
-  ],
-  [
-    "Travaillez-vous sur les véhicules professionnels ?",
-    "Oui, nous proposons des conditions adaptées aux flottes, taxis, VTC et véhicules de société.",
-  ],
-];
+import { pricingPlans, pricingOptions, pricingFaq } from "@/lib/pricing";
+
 export default function Prestations() {
   return (
     <>
       <PageHero
         index="01"
-        title="Des soins précis,"
-        accent="des prix clairs."
-        text="Choisissez la formule adaptée à votre véhicule. Chaque prestation commence par un diagnostic et se termine par un contrôle qualité."
+        title="Des prestations claires,"
+        accent="des prix transparents."
+        text="Choisissez la formule adaptée à votre véhicule. Les prestations peuvent être ajustées selon l'état de votre habitacle et vos besoins."
       />
       <section className="section-pad">
         <div className="container-site grid gap-5 lg:grid-cols-3">
-          {plans.map((p) => (
+          {pricingPlans.map((plan) => (
             <article
-              key={p.name}
-              className={`relative rounded-[2rem] border p-7 md:p-9 ${p.popular ? "border-aqua bg-mist/40 shadow-soft" : "border-black/10"}`}
+              key={plan.name}
+              className={`relative rounded-[2rem] border p-7 md:p-9 ${plan.popular ? "border-aqua bg-mist/40 shadow-soft" : "border-black/10"}`}
             >
-              {p.popular && (
+              {plan.popular && (
                 <span className="absolute right-6 top-6 rounded-full bg-aqua px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
                   Le plus choisi
                 </span>
               )}
               <p className="text-xs font-bold uppercase tracking-widest text-aqua-dark">
-                {p.time}
+                {plan.time}
               </p>
-              <h2 className="mt-5 font-display text-3xl font-bold">{p.name}</h2>
-              <p className="mt-2 text-sm text-black/50">{p.desc}</p>
+              <h2 className="mt-5 font-display text-3xl font-bold">
+                {plan.name}
+              </h2>
+              <p className="mt-2 text-sm text-black/50">{plan.desc}</p>
               <p className="my-8 border-y border-black/10 py-6">
                 <span className="font-display text-5xl font-bold">
-                  {p.price}€
+                  {plan.price}€
                 </span>
                 <span className="text-xs text-black/40"> à partir de</span>
               </p>
               <ul className="space-y-3">
-                {p.items.map((x) => (
-                  <li key={x} className="flex gap-3 text-sm">
+                {plan.items.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm">
                     <span className="text-aqua-dark">✓</span>
-                    {x}
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -116,20 +58,13 @@ export default function Prestations() {
             Les options qui font la différence.
           </h2>
           <div className="mt-12 grid gap-px overflow-hidden rounded-3xl bg-white/10 md:grid-cols-2">
-            {[
-              ["Poils d’animaux", "dès 30€"],
-              ["Traitement anti-odeurs", "45€"],
-              ["Soin cuir premium", "55€"],
-              ["Coffre très chargé", "25€"],
-              ["Siège enfant", "20€"],
-              ["Déplacement à domicile", "sur devis"],
-            ].map((x) => (
+            {pricingOptions.map(([name, price]) => (
               <div
-                key={x[0]}
+                key={name}
                 className="flex items-center justify-between bg-ink p-6 transition hover:bg-white/5"
               >
-                <span>{x[0]}</span>
-                <b className="text-aqua">{x[1]}</b>
+                <span>{name}</span>
+                <b className="text-aqua">{price}</b>
               </div>
             ))}
           </div>
@@ -148,16 +83,16 @@ export default function Prestations() {
             Tout savoir avant de venir.
           </h2>
           <div className="mt-10 divide-y divide-black/10">
-            {faq.map(([q, a]) => (
-              <details key={q} className="group py-6">
+            {pricingFaq.map(([question, answer]) => (
+              <details key={question} className="group py-6">
                 <summary className="flex cursor-pointer list-none items-center justify-between font-display text-xl font-bold">
-                  {q}
+                  {question}
                   <span className="text-aqua-dark transition group-open:rotate-45">
                     ＋
                   </span>
                 </summary>
                 <p className="max-w-2xl pt-4 text-sm leading-7 text-black/50">
-                  {a}
+                  {answer}
                 </p>
               </details>
             ))}
