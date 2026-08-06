@@ -20,7 +20,7 @@ export default function Prestations() {
             >
               {plan.popular && (
                 <span className="absolute right-6 top-6 rounded-full bg-aqua px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
-                  Le plus choisi
+                  LA PLUS CHOISIE
                 </span>
               )}
               <p className="text-xs font-bold uppercase tracking-widest text-aqua-dark">
@@ -45,7 +45,7 @@ export default function Prestations() {
                 ))}
               </ul>
               <a href="/contact" className="btn-primary mt-9 w-full">
-                Choisir cette formule
+                Demander un devis
               </a>
             </article>
           ))}
