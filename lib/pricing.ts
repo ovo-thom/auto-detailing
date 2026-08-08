@@ -53,12 +53,10 @@ export const pricingPlans: PricingPlan[] = [
 ];
 
 export const pricingOptions = [
-  ["Poils d’animaux", "dès 30€"],
-  ["Traitement anti-odeurs", "45€"],
-  ["Soin cuir premium", "55€"],
-  ["Coffre très chargé", "25€"],
-  ["Siège enfant", "20€"],
-  ["Déplacement à domicile", "sur devis"],
+  ["Nettoyage d’un siège enfant", "20€"],
+  ["Poils d’animaux", "dès 20€"],
+  ["Nettoyage d'un siège seul", "dès 25€"],
+  ["Nettoyage du coffre seul", "dès 25€"],
 ];
 
 export const pricingFaq = [

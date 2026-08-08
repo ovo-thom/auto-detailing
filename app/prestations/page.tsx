@@ -15,7 +15,7 @@ export default function Prestations() {
       <section className="section-pad">
         <div className="container-site">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {pricingPlans.map((plan) => (
                 <article
                   key={plan.name}
@@ -145,8 +145,14 @@ export default function Prestations() {
           </p>
 
           <h2 className="display text-4xl text-white sm:text-5xl lg:text-6xl">
-            Les options qui font la différence.
+            Des besoins spécifiques ?
           </h2>
+
+          <p className="mt-5 max-w-2xl text-base leading-7 text-white/60">
+            Besoin d&apos;un nettoyage ciblé ou d&apos;une attention
+            particulière ? Certaines prestations peuvent être réalisées
+            séparément ou ajoutées à votre formule.
+          </p>
 
           <div className="mt-14 grid overflow-hidden rounded-[2rem] border border-white/10 md:grid-cols-2">
             {pricingOptions.map(([name, price]) => (
@@ -165,9 +171,10 @@ export default function Prestations() {
 
           <p className="mt-8 text-sm leading-7 text-white/55">
             <strong className="text-white">Bon à savoir :</strong> les tarifs
-            dépendent du gabarit et de l&apos;état du véhicule. Les objets
-            personnels doivent être retirés avant le rendez-vous. Un supplément
-            peut s&apos;appliquer en cas de salissure extrême.
+            peuvent varier selon le gabarit et l&apos;état du véhicule. Pour
+            faciliter le nettoyage, merci de retirer vos effets personnels du
+            véhicule avant le rendez-vous. Un supplément peut s&apos;appliquer
+            en cas de salissure importante.
           </p>
         </div>
       </section>
