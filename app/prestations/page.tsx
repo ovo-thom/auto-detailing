@@ -1,8 +1,14 @@
+"use client";
+
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import Cta from "@/components/sections/Cta";
 import { pricingPlans, pricingOptions, pricingFaq } from "@/lib/pricing";
 
 export default function Prestations() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <>
       <PageHero
@@ -188,21 +194,45 @@ export default function Prestations() {
           </h2>
 
           <div className="mt-12 divide-y divide-black/10 border-y border-black/10">
-            {pricingFaq.map(([question, answer]) => (
-              <details key={question} className="group py-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-display text-lg font-bold">
-                  <span>{question}</span>
+            {pricingFaq.map(([question, answer], index) => {
+              const isOpen = openIndex === index;
 
-                  <span className="text-2xl font-normal text-aqua-dark transition group-open:rotate-45">
-                    ＋
-                  </span>
-                </summary>
+              return (
+                <div key={question} className="py-6">
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className="flex w-full cursor-pointer items-center justify-between gap-6 text-left font-display text-lg font-bold"
+                  >
+                    <span>{question}</span>
 
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-black/55">
-                  {answer}
-                </p>
-              </details>
-            ))}
+                    <motion.span
+                      animate={{ rotate: isOpen ? 45 : 0 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="text-2xl font-normal text-aqua-dark"
+                    >
+                      ＋
+                    </motion.span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <p className="mt-4 max-w-2xl text-sm leading-7 text-black/55">
+                          {answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

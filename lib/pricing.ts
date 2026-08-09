@@ -62,18 +62,26 @@ export const pricingOptions = [
 export const pricingFaq = [
   [
     "Combien de temps faut-il laisser le véhicule ?",
-    "De 2 à 8 heures selon la formule et l’état de l’habitacle. Une estimation précise vous est communiquée avant le rendez-vous.",
+    "De 2 à 8 heures selon la formule et l’état de l’habitacle. Une estimation plus précise vous est communiquée avant le rendez-vous.",
   ],
   [
     "Les taches partent-elles toutes ?",
-    "Nous obtenons d’excellents résultats, mais certaines taches anciennes ou ayant altéré les fibres peuvent rester légèrement visibles.",
+    "Nous obtenons d’excellents résultats grâce à des produits et des méthodes adaptés, mais certaines taches anciennes ou ayant altéré les fibres peuvent rester légèrement visibles.",
   ],
   [
-    "Puis-je récupérer la voiture avec les sièges secs ?",
-    "Oui. Notre matériel d’extraction et de séchage permet une restitution sèche ou très légèrement humide selon la saison.",
+    "Quel est le temps de séchage après le nettoyage ?",
+    "Après une injection-extraction, les sièges et textiles peuvent rester légèrement humides. Le temps de séchage varie selon les matériaux et les conditions, mais l’extraction permet de retirer un maximum d’humidité avant la restitution du véhicule.",
   ],
   [
     "Travaillez-vous sur les véhicules professionnels ?",
-    "Oui, nous proposons des conditions adaptées aux flottes, taxis, VTC et véhicules de société.",
+    "Oui, les véhicules professionnels et utilitaires peuvent également être pris en charge. Le tarif est adapté au gabarit, à l’état du véhicule et au travail nécessaire.",
+  ],
+  [
+    "Dois-je vider mon véhicule avant le rendez-vous ?",
+    "Pour faciliter le nettoyage et permettre l’accès à l’ensemble de l’habitacle, il est recommandé de retirer vos effets personnels avant le rendez-vous. Les éléments et équipements faisant partie du véhicule peuvent bien entendu rester en place.",
+  ],
+  [
+    "Comment connaître le tarif exact de ma prestation ?",
+    "Les tarifs affichés sont des prix de départ et peuvent varier selon le gabarit, l’état du véhicule et le travail nécessaire. Quelques photos de l’habitacle peuvent permettre d’évaluer la prestation et de vous communiquer un tarif avant le rendez-vous.",
   ],
 ];
