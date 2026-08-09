@@ -1,19 +1,8 @@
 import PageHero from "@/components/ui/PageHero";
 import BeforeAfter from "@/components/ui/BeforeAfter";
 import Cta from "@/components/sections/Cta";
-const photos = [
-  "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1000&q=80",
-];
-const projects = [
-  ["Audi Q5", "SUV familial · Formule Signature", "7h"],
-  ["Mercedes Classe A", "Textile taché · Formule Renouveau", "5h"],
-  ["Porsche 911", "Cuir clair · Soin sur mesure", "6h"],
-];
+import { photos, projects, detailingSteps } from "@/lib/realisationsData";
+
 export default function Realisations() {
   return (
     <>
@@ -26,12 +15,12 @@ export default function Realisations() {
       <section className="section-pad">
         <div className="container-site">
           <div className="grid gap-10 md:grid-cols-3">
-            {projects.map((p, i) => (
+            {projects.map((project, i) => (
               <BeforeAfter
-                key={p[0]}
+                key={project.name}
                 before={photos[i * 2]}
                 after={photos[i * 2 + 1]}
-                label={p[0]}
+                label={project.name}
               />
             ))}
           </div>
@@ -63,9 +52,9 @@ export default function Realisations() {
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 translate-y-3 bg-gradient-to-t from-black/80 to-transparent p-6 pt-16 text-white opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
-                  <b className="font-display">{projects[i % 3][0]}</b>
+                  <b className="font-display">{projects[i % 3].name}</b>
                   <p className="text-xs text-white/60">
-                    {projects[i % 3][1]} · {projects[i % 3][2]}
+                    {projects[i % 3].subtitle} · {projects[i % 3].duration}
                   </p>
                 </div>
               </figure>
@@ -75,27 +64,17 @@ export default function Realisations() {
       </section>
       <section className="section-pad">
         <div className="container-site grid gap-8 md:grid-cols-3">
-          {[
-            [
-              "01",
-              "Diagnostic",
-              "Inspection sous éclairage adapté et choix des méthodes.",
-            ],
-            [
-              "02",
-              "Traitement",
-              "Nettoyage zone par zone avec produits et accessoires dédiés.",
-            ],
-            [
-              "03",
-              "Finition",
-              "Protection, contrôle qualité et photos de restitution.",
-            ],
-          ].map((x) => (
-            <div key={x[0]} className="border-t border-black/15 pt-6">
-              <span className="text-xs font-bold text-aqua-dark">{x[0]}</span>
-              <h3 className="mt-4 font-display text-2xl font-bold">{x[1]}</h3>
-              <p className="mt-3 text-sm leading-6 text-black/50">{x[2]}</p>
+          {detailingSteps.map((step) => (
+            <div key={step.id} className="border-t border-black/15 pt-6">
+              <span className="text-xs font-bold text-aqua-dark">
+                {step.id}
+              </span>
+              <h3 className="mt-4 font-display text-2xl font-bold">
+                {step.title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-black/50">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>
