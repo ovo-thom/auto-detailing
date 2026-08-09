@@ -1,41 +1,74 @@
-type Photos = string[];
-
 type DetailingSteps = {
   id: string;
   title: string;
   description: string;
 };
 
-type Project = {
+type ComparisonProject = {
   name: string;
   subtitle: string;
   duration: string;
+  before: string;
+  after: string;
 };
 
-export const photos: Photos = [
-  "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1000&q=80",
+type GalleryPhoto = {
+  src: string;
+  alt: string;
+};
+
+type DetailingStep = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+// Section - Dernières transformations (galleryPhotos)
+
+export const galleryPhotos: GalleryPhoto[] = [
+  {
+    src: "/images/realisations/after/camionette_passager_apres.webp",
+    alt: "Habitacle propre d’une Volkswagen Golf 8",
+  },
+  {
+    src: "/images/realisations/after/siege_arriere_apres.webp",
+    alt: "Habitacle propre d’une Fiat 500",
+  },
+  {
+    src: "/images/after/apres_devant-propre.webp",
+    alt: "Habitacle propre d’un Fiat Doblò",
+  },
+  {
+    src: "/images/realisations/after/fiat_500_conducteur_apres.webp",
+    alt: "Habitacle propre d’un Fiat Doblò",
+  },
+  {
+    src: "/images/apres_cockpit_cadre.webp",
+    alt: "Habitacle propre d’un Fiat Doblò",
+  },
 ];
 
-export const projects: Project[] = [
+export const comparisonProjects: ComparisonProject[] = [
   {
-    name: "Audi Q5",
-    subtitle: "SUV familial · Formule Signature",
-    duration: "7h",
-  },
-  {
-    name: "Mercedes Classe A",
-    subtitle: "Textile taché · Formule Renouveau",
-    duration: "5h",
-  },
-  {
-    name: "Porsche 911",
-    subtitle: "Cuir clair · Soin sur mesure",
+    name: "Fiat Doblò",
+    subtitle: "Utilitaire · Nettoyage intérieur",
     duration: "6h",
+    before: "/images/realisations/before/camionette_passager_avant.webp",
+    after: "/images/realisations/after/camionette_passager_apres.webp",
+  },
+  {
+    name: "Volkswagen Golf 8",
+    subtitle: "Banquette arrière · Poils d’animaux",
+    duration: "4h",
+    before: "/images/realisations/before/siege_arriere_avant.webp",
+    after: "/images/realisations/after/siege_arriere_apres.webp",
+  },
+  {
+    name: "Fiat 500",
+    subtitle: "Habitacle avant · Nettoyage intérieur",
+    duration: "4h",
+    before: "/images/realisations/before/fiat_500_conducteur_avant.webp",
+    after: "/images/realisations/after/fiat_500_conducteur_apres.webp",
   },
 ];
 
