@@ -18,10 +18,10 @@ export default function Realisations() {
   return (
     <>
       <PageHero
-        index="02"
+        eyebrow="réalisations"
         title="Des résultats qui"
         accent="parlent d’eux-mêmes."
-        text="Découvrez une sélection de véhicules passés entre nos mains, des usages du quotidien aux intérieurs les plus exigeants."
+        text="Découvrez quelques transformations réalisées sur des véhicules aux états et besoins différents. Chaque intervention est adaptée pour obtenir le meilleur résultat possible."
       />
       <section className="section-pad">
         <div className="container-site">
@@ -100,7 +100,11 @@ export default function Realisations() {
           ))}
         </div>
       </section>
-      <Cta />
+      <Cta
+        eyebrow="Votre voiture mérite mieux"
+        title="Prêt à retrouver un intérieur impeccable ?"
+        text="Une question sur la formule adaptée à votre véhicule ? Contactez-moi."
+      />
     </>
   );
 }

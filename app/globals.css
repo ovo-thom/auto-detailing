@@ -38,7 +38,7 @@ body {
   @apply inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3.5 text-sm font-bold transition hover:-translate-y-1 hover:border-aqua hover:text-aqua-dark;
 }
 .hex-bg {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cpath d='M28 1 55 17v32L28 65 1 49V17Z' fill='none' stroke='%2310C7C3' stroke-opacity='.09'/%3E%3Cpath d='M28 66 55 82v16H1V82Z' fill='none' stroke='%2310C7C3' stroke-opacity='.09'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='88' viewBox='0 0 112 98'%3E%3Cpath d='M28 1 55 17v32L28 65 1 49V17Z' fill='none' stroke='%2310C7C3' stroke-opacity='.30'/%3E%3Cpath d='M84 50 111 66v32L84 114 57 98V66Z' fill='none' stroke='%2310C7C3' stroke-opacity='.30'/%3E%3Cpath d='M84 -48 111 -32V0L84 16 57 0V-32Z' fill='none' stroke='%2310C7C3' stroke-opacity='.30'/%3E%3C/svg%3E");
 }
 .water-shine:after {
   content: "";

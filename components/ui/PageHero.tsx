@@ -1,12 +1,12 @@
 import { PaintBrushIcon } from "@heroicons/react/24/outline";
 
 export default function PageHero({
-  index,
+  eyebrow,
   title,
   accent,
   text,
 }: {
-  index: string;
+  eyebrow: string;
   title: string;
   accent: string;
   text: string;
@@ -20,7 +20,7 @@ export default function PageHero({
             aria-hidden="true"
             className="h-6 w-6 shrink-0 text-aqua-dark"
           />
-          PRESTATIONS & TARIFS
+          {eyebrow}
         </p>
         <h1 className="display max-w-5xl text-5xl sm:text-7xl lg:text-[92px]">
           {title} <span className="text-aqua-dark">{accent}</span>
