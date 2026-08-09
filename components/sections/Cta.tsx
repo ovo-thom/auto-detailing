@@ -1,5 +1,17 @@
 import Link from "next/link";
-export default function Cta() {
+type CtaProps = {
+  eyebrow: string;
+  title: string;
+  text: string;
+  buttonText?: string;
+};
+
+export default function Cta({
+  eyebrow,
+  title,
+  text,
+  buttonText = "Demander mon devis",
+}: CtaProps) {
   return (
     <section className="section-pad">
       <div className="container-site">
@@ -7,17 +19,16 @@ export default function Cta() {
           <div className="hex-bg absolute inset-0 opacity-50" />
           <div className="relative">
             <p className="mb-5 text-xs font-bold uppercase tracking-[.24em]">
-              Votre voiture mérite mieux
+              {eyebrow}
             </p>
             <h2 className="display mx-auto max-w-3xl text-4xl md:text-6xl">
-              Prêt à retrouver un intérieur impeccable ?
+              {title}
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-black/60">
-              Une question sur la formule adaptée à votre véhicule ?
-              Contactez-moi.
+              {text}
             </p>
             <Link href="/contact" className="btn-primary mt-8">
-              Demander mon devis →
+              {buttonText}
             </Link>
           </div>
         </div>

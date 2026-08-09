@@ -237,7 +237,11 @@ export default function Prestations() {
         </div>
       </section>
 
-      <Cta />
+      <Cta
+        eyebrow="Une formule adaptée à votre véhicule"
+        title="Pas sûr de la formule qu’il vous faut ?"
+        text="Décrivez-moi l’état de votre véhicule et vos besoins. Je vous orienterai vers la prestation la plus adaptée."
+      />
     </>
   );
 }

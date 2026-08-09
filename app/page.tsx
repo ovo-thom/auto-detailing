@@ -137,7 +137,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Cta />
+      <Cta
+        eyebrow="Votre voiture mérite mieux"
+        title="Prêt à retrouver un intérieur impeccable ?"
+        text="Une question sur la formule adaptée à votre véhicule ? Contactez-moi."
+      />
     </>
   );
 }
