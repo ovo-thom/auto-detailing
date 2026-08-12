@@ -63,6 +63,21 @@ export default function Realisations() {
         </div>
       </section>
       <section className="section-pad">
+        <div className="container-site mb-14 max-w-3xl">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[.24em] text-aqua-dark">
+            Ma méthode
+          </p>
+
+          <h2 className="display text-4xl sm:text-5xl lg:text-6xl">
+            Chaque détail compte.
+          </h2>
+
+          <p className="mt-5 max-w-2xl text-base leading-7 text-black/60">
+            De l’évaluation aux finitions, chaque étape est réalisée avec soin
+            pour nettoyer efficacement l’habitacle tout en respectant les
+            différentes surfaces.
+          </p>
+        </div>
         <div className="container-site grid gap-8 md:grid-cols-3">
           {detailingSteps.map((step) => (
             <div key={step.id} className="border-t border-black/15 pt-6">

@@ -75,17 +75,20 @@ export const comparisonProjects: ComparisonProject[] = [
 export const detailingSteps: DetailingSteps[] = [
   {
     id: "01",
-    title: "Diagnostic",
-    description: "Inspection sous éclairage adapté et choix des méthodes.",
+    title: "Évaluation",
+    description:
+      "J’évalue l’état de l’habitacle, les matériaux et les zones qui nécessitent une attention particulière.",
   },
   {
     id: "02",
-    title: "Traitement",
-    description: "Nettoyage zone par zone avec produits et accessoires dedies.",
+    title: "Nettoyage",
+    description:
+      "Chaque zone est nettoyée avec les produits, accessoires et méthodes adaptés à chaque surface.",
   },
   {
     id: "03",
-    title: "Finition",
-    description: "Protection, controle qualite et photos de restitution.",
+    title: "Finitions",
+    description:
+      "Je vérifie l’ensemble de l’habitacle et apporte les dernières finitions avant la restitution du véhicule.",
   },
 ];
