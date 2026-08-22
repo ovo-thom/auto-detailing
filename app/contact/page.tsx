@@ -1,8 +1,27 @@
+"use client";
+
 import PageHero from "@/components/ui/PageHero";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { contactInfos, serviceOptions, whatsappUrl } from "@/lib/contactData";
+import { useState } from "react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    vehicle: "",
+    service: "Je souhaite être conseillé",
+    message: "",
+    consent: false,
+  });
+
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    console.log(formData);
+  };
+
   return (
     <>
       <PageHero
@@ -48,7 +67,15 @@ export default function Contact() {
               <label className="text-sm font-bold">
                 Nom complet
                 <input
+                  name="name"
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      name: e.target.value,
+                    })
+                  }
                   required
+                  value={formData.name}
                   placeholder="Votre nom"
                   className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none transition focus:border-aqua"
                 />
@@ -56,8 +83,16 @@ export default function Contact() {
               <label className="text-sm font-bold">
                 Téléphone
                 <input
-                  required
+                  name="phone"
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      phone: e.target.value,
+                    })
+                  }
                   type="tel"
+                  value={formData.phone}
+                  required
                   placeholder="+32 ..."
                   className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
                 />
@@ -65,8 +100,16 @@ export default function Contact() {
               <label className="text-sm font-bold">
                 E-mail
                 <input
+                  name="email"
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      email: e.target.value,
+                    })
+                  }
                   required
                   type="email"
+                  value={formData.email}
                   placeholder="vous@email.be"
                   className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
                 />
@@ -74,14 +117,32 @@ export default function Contact() {
               <label className="text-sm font-bold">
                 Véhicule
                 <input
+                  name="vehicle"
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      vehicle: e.target.value,
+                    })
+                  }
                   required
                   placeholder="Marque, modèle, année"
+                  value={formData.vehicle}
                   className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
                 />
               </label>
               <label className="text-sm font-bold md:col-span-2">
                 Prestation souhaitée
-                <select className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua">
+                <select
+                  name="service"
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      service: e.target.value,
+                    })
+                  }
+                  value={formData.service}
+                  className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
+                >
                   {serviceOptions.map((option) => (
                     <option key={option}>{option}</option>
                   ))}
@@ -90,14 +151,35 @@ export default function Contact() {
               <label className="text-sm font-bold md:col-span-2">
                 État du véhicule et attentes
                 <textarea
+                  name="message"
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      message: e.target.value,
+                    })
+                  }
                   rows={5}
-                  placeholder="Taches, poils d’animaux, odeurs, type de sellerie…"
+                  required
+                  value={formData.message}
+                  placeholder="Décrivez brièvement l’état de l’habitacle et vos besoins (taches, poils d’animaux, sellerie…)."
                   className="mt-2 w-full resize-none rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
                 />
               </label>
             </div>
             <label className="mt-5 flex gap-3 text-xs leading-5 text-black/45">
-              <input type="checkbox" required className="accent-aqua" />{" "}
+              <input
+                name="consent"
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    consent: e.target.checked,
+                  })
+                }
+                checked={formData.consent}
+                type="checkbox"
+                required
+                className="accent-aqua"
+              />{" "}
               J’accepte que mes informations soient utilisées pour répondre à ma
               demande.
             </label>

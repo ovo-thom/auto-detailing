@@ -33,6 +33,7 @@ export const serviceOptions = [
   "Formule Essentiel",
   "Formule Approfondi",
   "Formule Complet",
+  "Prestation à la carte",
 ];
 
 export const whatsappMessage =
