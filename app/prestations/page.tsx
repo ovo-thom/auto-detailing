@@ -12,7 +12,7 @@ export default function Prestations() {
   return (
     <>
       <PageHero
-        index="Prestations & tarifs"
+        eyebrow="Prestations & tarifs"
         title="Des prestations claires,"
         accent="des prix transparents."
         text="Choisissez la formule adaptée à votre véhicule. Les prestations peuvent être ajustées selon l'état de votre habitacle et vos besoins."

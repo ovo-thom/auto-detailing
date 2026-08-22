@@ -1,18 +1,15 @@
 import PageHero from "@/components/ui/PageHero";
-import {
-  MapPinIcon,
-  PhoneIcon,
-  EnvelopeIcon,
-  ClockIcon,
-} from "@heroicons/react/24/outline";
+import { MapPinIcon } from "@heroicons/react/24/outline";
+import { contactInfos, serviceOptions, whatsappUrl } from "@/lib/contactData";
+
 export default function Contact() {
   return (
     <>
       <PageHero
-        index="03"
+        eyebrow="contact"
         title="Parlons de"
         accent="votre véhicule."
-        text="Décrivez-nous son état et vos attentes. Nous revenons vers vous avec une recommandation et une estimation personnalisées."
+        text="Décrivez-moi l’état de votre véhicule et vos besoins. Je vous conseillerai la prestation la plus adaptée et vous communiquerai une estimation personnalisée."
       />
       <section className="section-pad">
         <div className="container-site grid gap-12 lg:grid-cols-[.75fr_1.25fr]">
@@ -20,28 +17,27 @@ export default function Contact() {
             <p className="eyebrow">Contact direct</p>
             <h2 className="display text-4xl">
               Une question ?<br />
-              On vous répond.
+              Je vous réponds.
             </h2>
             <div className="mt-10 space-y-6">
-              {[
-                [PhoneIcon, "Téléphone", "+32 470 12 34 56"],
-                [EnvelopeIcon, "E-mail", "bonjour@ateliernacre.be"],
-                [MapPinIcon, "Atelier", "Rue de l’Atelier 24, Bruxelles"],
-                [ClockIcon, "Horaires", "Lun–Sam · 08:30–18:30"],
-              ].map(([Icon, l, v]: any) => (
-                <div key={l} className="flex gap-4">
+              {contactInfos.map(({ icon: Icon, label, value }) => (
+                <div key={label} className="flex gap-4">
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-mist">
                     <Icon className="h-5 w-5 text-aqua-dark" />
                   </span>
+
                   <div>
-                    <b className="text-xs uppercase tracking-widest">{l}</b>
-                    <p className="mt-1 text-sm text-black/50">{v}</p>
+                    <b className="text-xs uppercase tracking-widest">{label}</b>
+
+                    <p className="mt-1 text-sm text-black/50">{value}</p>
                   </div>
                 </div>
               ))}
             </div>
             <a
-              href="https://wa.me/32470123456"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-10 inline-flex w-full items-center justify-center rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-bold text-white transition hover:-translate-y-1"
             >
               Discuter sur WhatsApp →
@@ -86,10 +82,9 @@ export default function Contact() {
               <label className="text-sm font-bold md:col-span-2">
                 Prestation souhaitée
                 <select className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua">
-                  <option>Je souhaite être conseillé</option>
-                  <option>Formule Essentiel</option>
-                  <option>Formule Renouveau</option>
-                  <option>Formule Signature</option>
+                  {serviceOptions.map((option) => (
+                    <option key={option}>{option}</option>
+                  ))}
                 </select>
               </label>
               <label className="text-sm font-bold md:col-span-2">
