@@ -4,6 +4,7 @@ import PageHero from "@/components/ui/PageHero";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { contactInfos, serviceOptions, whatsappUrl } from "@/lib/contactData";
 import { useState } from "react";
+import { p } from "framer-motion/client";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,9 +16,24 @@ export default function Contact() {
     message: "",
     consent: false,
   });
+  const [error, setError] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+
+    if (phoneDigits.length < 9) {
+      setError("Veuillez entrer un numéro de téléphone valide.");
+      setIsSuccess(false);
+      return;
+    }
+
+    setError("");
+    setIsSuccess(true);
+
+    console.log("Formulaire envoyé !");
 
     console.log(formData);
   };
@@ -62,7 +78,10 @@ export default function Contact() {
               Discuter sur WhatsApp →
             </a>
           </aside>
-          <form className="rounded-[2rem] border border-black/10 bg-white p-6 shadow-soft md:p-10">
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-[2rem] border border-black/10 bg-white p-6 shadow-soft md:p-10"
+          >
             <div className="grid gap-6 md:grid-cols-2">
               <label className="text-sm font-bold">
                 Nom complet
@@ -96,6 +115,11 @@ export default function Contact() {
                   placeholder="+32 ..."
                   className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
                 />
+                {error && (
+                  <p className="mt-2 text-xs font-normal text-red-500">
+                    {error}
+                  </p>
+                )}
               </label>
               <label className="text-sm font-bold">
                 E-mail
@@ -186,6 +210,12 @@ export default function Contact() {
             <button className="btn-primary mt-7 w-full" type="submit">
               Envoyer ma demande →
             </button>
+            {isSuccess && (
+              <p className="mt-3 text-center text-sm font-normal text-green-500">
+                Votre demande a bien été envoyée. Je vous répondrai dès que
+                possible.
+              </p>
+            )}
           </form>
         </div>
       </section>
