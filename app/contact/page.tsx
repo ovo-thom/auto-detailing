@@ -33,9 +33,21 @@ export default function Contact() {
     setError("");
     setIsSuccess(true);
 
-    console.log("Formulaire envoyé !");
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-    console.log(formData);
+    const data = await response.json();
+
+    console.log(data);
+
+    if (response.ok) {
+      setIsSuccess(true);
+    }
   };
 
   return (
