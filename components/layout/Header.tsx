@@ -4,13 +4,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { navigationLinks } from "@/lib/navigation";
 
-const links = [
-  ["/", "Accueil"],
-  ["/prestations", "Prestations & tarifs"],
-  ["/realisations", "Réalisations"],
-  ["/contact", "Contact"],
-];
 export default function Header() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
@@ -28,7 +23,7 @@ export default function Header() {
           />
         </Link>
         <nav className="hidden items-center gap-7 lg:flex">
-          {links.map(([href, label]) => (
+          {navigationLinks.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
@@ -51,7 +46,7 @@ export default function Header() {
       </div>
       {open && (
         <nav className="container-site flex flex-col gap-5 border-t border-black/5 py-6 lg:hidden">
-          {links.map(([href, label]) => (
+          {navigationLinks.map(({ href, label }) => (
             <Link
               onClick={() => setOpen(false)}
               key={href}
