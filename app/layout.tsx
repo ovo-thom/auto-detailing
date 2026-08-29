@@ -4,11 +4,11 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 export const metadata: Metadata = {
   title: {
-    default: "Atelier Nacre — Detailing intérieur",
-    template: "%s | Atelier Nacre",
+    default: "Flow Detailing — Nettoyage intérieur automobile à Liège",
+    template: "%s | Flow Detailing",
   },
   description:
-    "Detailing intérieur automobile premium à Bruxelles et alentours.",
+    "Nettoyage et detailing intérieur automobile à Liège et en Province de Liège. Devis sur photo.",
 };
 export default function RootLayout({
   children,

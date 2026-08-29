@@ -3,6 +3,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
+
 const links = [
   ["/", "Accueil"],
   ["/prestations", "Prestations & tarifs"],
@@ -16,15 +18,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur-xl">
       <div className="container-site flex h-[76px] items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-ink text-sm font-black text-aqua">
-            AN
-          </span>
-          <span className="font-display text-lg font-bold tracking-tight">
-            ATELIER NACRE
-            <span className="block font-sans text-[9px] font-bold tracking-[.25em] text-black/40">
-              DETAILING INTÉRIEUR
-            </span>
-          </span>
+          <Image
+            src="/images/flow-detailing-navbar-black.svg"
+            alt="Flow Detailing"
+            width={160}
+            height={48}
+            className="h-12 w-auto"
+            priority
+          />
         </Link>
         <nav className="hidden items-center gap-7 lg:flex">
           {links.map(([href, label]) => (
