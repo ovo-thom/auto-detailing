@@ -235,11 +235,13 @@ export default function Contact() {
         <div className="container-site grid gap-8 md:grid-cols-2 md:items-center">
           <div>
             <p className="eyebrow">Zone d’intervention</p>
-            <h2 className="display text-4xl">Bruxelles & 30 km autour.</h2>
+            <h2 className="display md:text-2xl">
+              Saint-Nicolas · Province de Liège.
+            </h2>
             <p className="mt-5 max-w-lg text-sm leading-7 text-white/50">
-              Notre atelier se trouve au centre de Bruxelles. Le déplacement à
-              domicile est possible à Bruxelles, Waterloo, Zaventem, Vilvorde et
-              environs.
+              Les prestations sont réalisées sur rendez-vous à Saint-Nicolas.
+              Contactez-moi pour organiser la prise en charge de votre véhicule
+              et connaître les disponibilités.
             </p>
           </div>
           <div className="hex-bg grid min-h-64 place-items-center rounded-3xl border border-white/10 bg-white/5">
@@ -247,9 +249,9 @@ export default function Contact() {
               <div className="grid h-24 w-24 place-items-center rounded-full bg-aqua/15">
                 <MapPinIcon className="h-10 text-aqua" />
               </div>
-              <span className="absolute -right-4 top-3 text-xs text-white/40">
+              {/* <span className="absolute -right-4 top-3 text-xs text-white/40">
                 30 km
-              </span>
+              </span> */}
             </div>
           </div>
         </div>
