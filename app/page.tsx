@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <section className="container-site py-6">
-        <div className="relative min-h-[650px] overflow-hidden rounded-[2.5rem] bg-ink">
+        <div className="relative min-h-[560px] overflow-hidden rounded-[2.5rem] bg-ink md:min-h-[620px] lg:min-h-[650px]">
           <img
             src={img.hero}
             alt="Detailing d'un intérieur automobile"
@@ -17,11 +17,11 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent" />
           <div className="hex-bg absolute right-0 top-0 h-full w-1/3" />
-          <div className="relative flex min-h-[650px] max-w-3xl flex-col justify-center px-7 py-20 text-white md:px-16">
+          <div className="relative flex min-h-[560px] max-w-3xl flex-col justify-center px-7 py-14 text-white md:min-h-[620px] md:px-12 md:py-16 lg:min-h-[650px] lg:px-16 lg:py-20">
             <p className="mb-6 text-xs font-bold uppercase tracking-[.26em] text-aqua">
               Detailing intérieur · Liège
             </p>
-            <h1 className="display text-5xl sm:text-7xl lg:text-[88px]">
+            <h1 className="display text-5xl md:text-6xl lg:text-[88px]">
               Votre intérieur.
               <br />
               <span className="text-aqua">Comme neuf.</span>

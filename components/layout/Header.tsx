@@ -11,14 +11,14 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur-xl">
-      <div className="container-site flex h-[76px] items-center justify-between">
+      <div className="container-site flex h-[64px] items-center justify-between md:h-[72px] lg:h-[76px]">
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/images/flow-detailing-navbar-black.svg"
             alt="Flow Detailing"
             width={160}
             height={48}
-            className="h-12 w-auto"
+            className="h-9 w-auto md:h-11 lg:h-12"
             priority
           />
         </Link>
