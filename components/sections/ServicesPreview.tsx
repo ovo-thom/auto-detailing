@@ -39,9 +39,9 @@ export default function ServicesPreview() {
               className="group rounded-3xl border border-black/10 p-7 transition duration-300 hover:-translate-y-2 hover:border-aqua/60 hover:shadow-soft"
             >
               <div className="flex items-center justify-between">
-                <Icon className="h-9 w-9 text-aqua-dark" />
+                <Icon className="h-8 w-8 md:h-9 lg:w-9 text-aqua-dark" />
               </div>
-              <h3 className="mt-12 font-display text-2xl font-bold">
+              <h3 className="mt-6 md:mt-10 lg:mt-12 font-display text-2xl font-bold">
                 {x.title}
               </h3>
               <p className="mt-3 text-sm leading-6 text-black/50">{x.text}</p>
