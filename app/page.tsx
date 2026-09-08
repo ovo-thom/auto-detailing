@@ -87,7 +87,7 @@ export default function Home() {
             title="Le détail change tout."
             text="Faites glisser le curseur pour voir le travail réalisé."
           />
-          <div className="mt-14 grid gap-8 md:grid-cols-3">
+          <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {img.comparisons.map((item) => (
               <BeforeAfter
                 key={item.label}
@@ -105,11 +105,18 @@ export default function Home() {
             <img
               src={img.workMethodImage}
               alt="Travail précis de detailing"
-              className="aspect-[4/5] w-full rounded-[2.5rem] object-cover"
+              className="
+            aspect-[4/5] w-full rounded-[2.5rem] object-cover
+            min-[600px]:h-[480px] min-[600px]:aspect-auto
+            min-[600px]:object-[center_45%]
+            lg:h-auto lg:aspect-[4/5]
+            "
             />
-            <div className="absolute -bottom-6 -right-3 rounded-3xl bg-aqua p-7 md:right-[-30px]">
-              <span className="font-display text-5xl font-bold">100%</span>
-              <span className="block text-xs font-bold uppercase tracking-widest">
+            <div className="absolute -bottom-4 -right-2 rounded-3xl bg-aqua p-5 md:-bottom-6 md:right-[-30px] md:p-7">
+              <span className="font-display text-4xl font-bold md:text-5xl">
+                100%
+              </span>
+              <span className="block text-[10px] font-bold uppercase tracking-widest md:text-xs">
                 fait à la main
               </span>
             </div>

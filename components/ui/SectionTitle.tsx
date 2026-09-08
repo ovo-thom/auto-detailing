@@ -15,7 +15,7 @@ export default function SectionTitle({
 }) {
   return (
     <div className={center ? "mx-auto max-w-3xl text-center" : ""}>
-      <p className={`eyebrow before:hidden ${center ? "justify-center" : ""}`}>
+      <p className={`eyebrow before:hidden mt-8 ${center ? "justify-center" : ""}`}>
         {showBrush && (
           <PaintBrushIcon
             aria-hidden="true"
