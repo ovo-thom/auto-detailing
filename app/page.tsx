@@ -17,8 +17,8 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent" />
           <div className="hex-bg absolute right-0 top-0 h-full w-1/3" />
-          <div className="relative flex min-h-[560px] max-w-3xl flex-col justify-center px-7 py-14 text-white md:min-h-[620px] md:px-12 md:py-16 lg:min-h-[650px] lg:px-16 lg:py-20">
-            <p className="mb-6 text-xs font-bold uppercase tracking-[.26em] text-aqua">
+          <div className="relative flex min-h-[560px] max-w-3xl flex-col justify-center px-7 py-14 text-white md:min-h-[520px] md:px-12 md:py-16 lg:min-h-[650px] lg:px-16 lg:py-20">
+            <p className="mb-6 text-[11px] md:text-xs font-semibold md:font-bold uppercase tracking-[.26em] text-aqua">
               Detailing intérieur · Liège
             </p>
             <h1 className="display text-5xl md:text-6xl lg:text-[88px]">
@@ -107,7 +107,7 @@ export default function Home() {
               alt="Travail précis de detailing"
               className="
             aspect-[4/5] w-full rounded-[2.5rem] object-cover
-            min-[600px]:h-[480px] min-[600px]:aspect-auto
+            min-[600px]:h-[440px] min-[500px]:aspect-auto
             min-[600px]:object-[center_45%]
             lg:h-auto lg:aspect-[4/5]
             "
