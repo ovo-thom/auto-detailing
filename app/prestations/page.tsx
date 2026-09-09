@@ -41,7 +41,7 @@ export default function Prestations() {
                     {plan.time}
                   </span>
 
-                  <h2 className="mt-6 font-display text-3xl font-bold">
+                  <h2 className="mt-6 font-display text-2xl font-bold lg:text-3xl">
                     {plan.name}
                   </h2>
 
@@ -49,9 +49,9 @@ export default function Prestations() {
                     {plan.desc}
                   </p>
 
-                  <div className="my-8 border-y border-black/10 py-7">
+                  <div className="my-6 border-y border-black/10 py-5 md:my-7 md:py-6 lg:my-8 lg:py-7">
                     <div className="flex items-end gap-1">
-                      <span className="font-display text-5xl font-bold">
+                      <span className="font-display text-4xl font-bold lg:text-5xl">
                         {plan.price}€
                       </span>
 
@@ -61,7 +61,7 @@ export default function Prestations() {
                     </div>
                   </div>
 
-                  <ul className="space-y-4">
+                  <ul className="space-y-3 md:space-y-4">
                     {plan.items.map((item) => (
                       <li
                         key={item}

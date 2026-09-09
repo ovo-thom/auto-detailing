@@ -22,10 +22,10 @@ export default function PageHero({
           />
           {eyebrow}
         </p>
-        <h1 className="display max-w-5xl text-[2.1rem] leading-[0.94] sm:text-6xl md:text-7xl lg:text-[92px]">
+        <h1 className="display max-w-5xl text-[2.1rem] leading-[0.94] sm:text-6xl md:text-6xl lg:text-[82px] xl:text-[92px]">
           {title} <span className="text-aqua-dark">{accent}</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-base leading-7 text-black/55">
+        <p className="mt-6 max-w-xl lg:max-w-2xl text-base leading-7 text-black/55">
           {text}
         </p>
       </div>
