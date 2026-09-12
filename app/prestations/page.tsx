@@ -189,11 +189,11 @@ export default function Prestations() {
         <div className="container-site">
           <p className="eyebrow">Questions fréquentes</p>
 
-          <h2 className="display text-4xl sm:text-5xl lg:text-6xl">
+          <h2 className="display text-3xl sm:text-4xl lg:text-5xl">
             Tout savoir avant de venir.
           </h2>
 
-          <div className="mt-12 divide-y divide-black/10 border-y border-black/10">
+          <div className="mt-10 divide-y divide-black/10 border-y border-black/10">
             {pricingFaq.map(([question, answer], index) => {
               const isOpen = openIndex === index;
 
@@ -202,7 +202,7 @@ export default function Prestations() {
                   <button
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="flex w-full cursor-pointer items-center justify-between gap-6 text-left font-display text-lg font-bold"
+                    className="flex w-full cursor-pointer items-center justify-between gap-6 text-left font-display text-base md:text-lg font-bold"
                   >
                     <span>{question}</span>
 
@@ -224,7 +224,7 @@ export default function Prestations() {
                         transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
                         className="overflow-hidden"
                       >
-                        <p className="mt-4 max-w-2xl text-sm leading-7 text-black/55">
+                        <p className="mt-4 max-w-2xl text-sm sm:text-base leading-7 text-black/55">
                           {answer}
                         </p>
                       </motion.div>
