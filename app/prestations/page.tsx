@@ -202,7 +202,7 @@ export default function Prestations() {
                   <button
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="flex w-full cursor-pointer items-center justify-between gap-6 text-left font-display text-base md:text-lg font-bold"
+                    className="flex w-full cursor-pointer items-center justify-between gap-6 text-left font-display text-sm md:text-lg font-bold"
                   >
                     <span>{question}</span>
 
