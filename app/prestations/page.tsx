@@ -146,21 +146,21 @@ export default function Prestations() {
 
       <section className="section-pad bg-ink text-white">
         <div className="container-site">
-          <p className="mb-7 text-xs font-bold uppercase tracking-[.24em] text-aqua">
+          <p className="mb-6 text-[11px] sm:text-xs font-bold uppercase tracking-[.24em] text-aqua">
             À la carte
           </p>
 
-          <h2 className="display text-4xl text-white sm:text-5xl lg:text-6xl">
+          <h2 className="display text-3xl text-white sm:text-4xl lg:text-5xl">
             Des besoins spécifiques ?
           </h2>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/60">
+          <p className="mt-5 max-w-2xl text-sm sm:text-base leading-7 text-white/60">
             Besoin d&apos;un nettoyage ciblé ou d&apos;une attention
             particulière ? Certaines prestations peuvent être réalisées
             séparément ou ajoutées à votre formule.
           </p>
 
-          <div className="mt-14 grid overflow-hidden rounded-[2rem] border border-white/10 md:grid-cols-2">
+          <div className="mt-10 grid overflow-hidden rounded-[2rem] border border-white/10 md:grid-cols-2">
             {pricingOptions.map(([name, price]) => (
               <div
                 key={name}
@@ -175,7 +175,7 @@ export default function Prestations() {
             ))}
           </div>
 
-          <p className="mt-8 text-sm leading-7 text-white/55">
+          <p className="mt-8 text-sm sm:text-base leading-7 text-white/55">
             <strong className="text-white">Bon à savoir :</strong> les tarifs
             peuvent varier selon le gabarit et l&apos;état du véhicule. Pour
             faciliter le nettoyage, merci de retirer vos effets personnels du
