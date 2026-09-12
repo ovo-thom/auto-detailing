@@ -4,7 +4,6 @@ import PageHero from "@/components/ui/PageHero";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { contactInfos, serviceOptions, whatsappUrl } from "@/lib/contactData";
 import { useState } from "react";
-import { p } from "framer-motion/client";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,6 +15,7 @@ export default function Contact() {
     message: "",
     consent: false,
   });
+
   const [error, setError] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -31,22 +31,33 @@ export default function Contact() {
     }
 
     setError("");
-    setIsSuccess(true);
+    setIsSuccess(false);
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    console.log(data);
+      console.log(data);
 
-    if (response.ok) {
+      if (!response.ok) {
+        setError("Une erreur est survenue lors de l’envoi.");
+        setIsSuccess(false);
+        return;
+      }
+
       setIsSuccess(true);
+    } catch (error) {
+      console.error(error);
+
+      setError("Une erreur est survenue lors de l’envoi.");
+      setIsSuccess(false);
     }
   };
 
@@ -58,14 +69,18 @@ export default function Contact() {
         accent="votre véhicule."
         text="Décrivez-moi l’état de votre véhicule et vos besoins. Je vous conseillerai la prestation la plus adaptée et vous communiquerai une estimation personnalisée."
       />
+
       <section className="section-pad">
         <div className="container-site grid gap-12 lg:grid-cols-[.75fr_1.25fr]">
           <aside>
             <p className="eyebrow">Contact direct</p>
-            <h2 className="display text-4xl">
-              Une question ?<br />
+
+            <h2 className="display text-3xl md:text-4xl">
+              Une question?
+              <br />
               Je vous réponds.
             </h2>
+
             <div className="mt-10 space-y-6">
               {contactInfos.map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex gap-4">
@@ -81,6 +96,7 @@ export default function Contact() {
                 </div>
               ))}
             </div>
+
             <a
               href={whatsappUrl}
               target="_blank"
@@ -90,6 +106,7 @@ export default function Contact() {
               Discuter sur WhatsApp →
             </a>
           </aside>
+
           <form
             onSubmit={handleSubmit}
             className="rounded-[2rem] border border-black/10 bg-white p-6 shadow-soft md:p-10"
@@ -111,6 +128,7 @@ export default function Contact() {
                   className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none transition focus:border-aqua"
                 />
               </label>
+
               <label className="text-sm font-bold">
                 Téléphone
                 <input
@@ -133,6 +151,7 @@ export default function Contact() {
                   </p>
                 )}
               </label>
+
               <label className="text-sm font-bold">
                 E-mail
                 <input
@@ -150,6 +169,7 @@ export default function Contact() {
                   className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
                 />
               </label>
+
               <label className="text-sm font-bold">
                 Véhicule
                 <input
@@ -166,6 +186,7 @@ export default function Contact() {
                   className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
                 />
               </label>
+
               <label className="text-sm font-bold md:col-span-2">
                 Prestation souhaitée
                 <select
@@ -184,6 +205,7 @@ export default function Contact() {
                   ))}
                 </select>
               </label>
+
               <label className="text-sm font-bold md:col-span-2">
                 État du véhicule et attentes
                 <textarea
@@ -202,6 +224,7 @@ export default function Contact() {
                 />
               </label>
             </div>
+
             <label className="mt-5 flex gap-3 text-xs leading-5 text-black/45">
               <input
                 name="consent"
@@ -215,13 +238,15 @@ export default function Contact() {
                 type="checkbox"
                 required
                 className="accent-aqua"
-              />{" "}
+              />
               J’accepte que mes informations soient utilisées pour répondre à ma
               demande.
             </label>
+
             <button className="btn-primary mt-7 w-full" type="submit">
               Envoyer ma demande →
             </button>
+
             {isSuccess && (
               <p className="mt-3 text-center text-sm font-normal text-green-500">
                 Votre demande a bien été envoyée. Je vous répondrai dès que
@@ -231,27 +256,28 @@ export default function Contact() {
           </form>
         </div>
       </section>
+
       <section className="bg-ink py-16 text-white">
         <div className="container-site grid gap-8 md:grid-cols-2 md:items-center">
           <div>
             <p className="eyebrow">Zone d’intervention</p>
-            <h2 className="display md:text-2xl">
+
+            <h2 className="display text-xl md:text-2xl">
               Saint-Nicolas · Province de Liège.
             </h2>
+
             <p className="mt-5 max-w-lg text-sm leading-7 text-white/50">
               Les prestations sont réalisées sur rendez-vous à Saint-Nicolas.
               Contactez-moi pour organiser la prise en charge de votre véhicule
               et connaître les disponibilités.
             </p>
           </div>
-          <div className="hex-bg grid min-h-64 place-items-center rounded-3xl border border-white/10 bg-white/5">
-            <div className="relative grid h-40 w-40 place-items-center rounded-full border border-aqua/30">
-              <div className="grid h-24 w-24 place-items-center rounded-full bg-aqua/15">
-                <MapPinIcon className="h-10 text-aqua" />
+
+          <div className="hex-bg grid min-h-52 place-items-center rounded-3xl border border-white/10 bg-white/5 md:min-h-64">
+            <div className="relative grid h-32 w-32 place-items-center rounded-full border border-aqua/30 md:h-40 md:w-40">
+              <div className="grid h-20 w-20 place-items-center rounded-full bg-aqua/15 md:h-24 md:w-24">
+                <MapPinIcon className="h-9 text-aqua md:h-10" />
               </div>
-              {/* <span className="absolute -right-4 top-3 text-xs text-white/40">
-                30 km
-              </span> */}
             </div>
           </div>
         </div>
