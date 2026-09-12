@@ -25,7 +25,7 @@ export default function Prestations() {
               {pricingPlans.map((plan) => (
                 <article
                   key={plan.name}
-                  className={`relative rounded-[2rem] border p-7 md:p-9 ${
+                  className={`relative rounded-[2rem] border p-6 md:p-8 lg:p-9 ${
                     plan.popular
                       ? "border-aqua bg-mist/40 shadow-soft"
                       : "border-black/10"
@@ -41,17 +41,17 @@ export default function Prestations() {
                     {plan.time}
                   </span>
 
-                  <h2 className="mt-6 font-display text-2xl font-bold lg:text-3xl">
+                  <h2 className="mt-4 font-display text-2xl font-bold md:text-2xl lg:text-3xl">
                     {plan.name}
                   </h2>
 
-                  <p className="mt-2 text-sm leading-6 text-black/50">
+                  <p className="mt-2 text-sm leading-5 text-black/50 md:leading-6">
                     {plan.desc}
                   </p>
 
-                  <div className="my-6 border-y border-black/10 py-5 md:my-7 md:py-6 lg:my-8 lg:py-7">
+                  <div className="my-5 border-y border-black/10 py-5 md:my-7 md:py-6 lg:my-8 lg:py-7">
                     <div className="flex items-end gap-1">
-                      <span className="font-display text-4xl font-bold lg:text-5xl">
+                      <span className="font-display text-[22px] font-bold md:text-4xl lg:text-5xl">
                         {plan.price}€
                       </span>
 
@@ -75,7 +75,7 @@ export default function Prestations() {
 
                   <a
                     href="/contact"
-                    className="mt-10 block w-full rounded-full bg-ink px-6 py-4 text-center text-sm font-bold text-white transition hover:-translate-y-1"
+                    className="mt-7 block w-full rounded-full bg-ink px-6 py-4 text-center text-sm font-bold text-white transition hover:-translate-y-1 md:mt-9 lg:mt-10"
                   >
                     Demander un devis
                   </a>
@@ -83,17 +83,17 @@ export default function Prestations() {
               ))}
             </div>
 
-            <div className="mt-14 rounded-[2rem] border border-black/10 bg-mist/40 px-8 py-10 md:px-12 md:py-12">
-              <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <div className="mt-14 rounded-[2rem] border border-black/10 bg-mist/40 px-8 py-8 md:px-12 md:py-12">
+              <div className="grid gap-6 md:gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
                 <div>
                   <p className="eyebrow before:hidden">Le soin du détail</p>
 
-                  <h3 className="font-display text-3xl font-bold leading-tight md:text-4xl">
+                  <h3 className="font-display text-2xl font-bold leading-tight md:text-4xl">
                     Bien plus qu&apos;un simple nettoyage.
                   </h3>
                 </div>
                 <div>
-                  <p className="max-w-lg text-base leading-7 text-black/60">
+                  <p className="max-w-lg text-sm leading-6 text-black/60 md:text-base md:leading-7">
                     Chaque prestation est réalisée avec soin, en prenant le
                     temps nécessaire pour traiter votre véhicule jusque dans les
                     détails. J&apos;utilise des produits professionnels adaptés
