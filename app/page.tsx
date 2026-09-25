@@ -123,7 +123,7 @@ export default function Home() {
           </div>
           <div className="lg:pl-12">
             <SectionTitle
-              eyebrow="Pourquoi Atelier Nacre"
+              eyebrow="Pourquoi Flow Detailing"
               title="De la patience. De la précision."
               text="Chaque véhicule est nettoyé avec le même soin, qu'il s'agisse d'une citadine, d'un SUV ou d'un utilitaire. J'utilise des produits adaptés à chaque surface et je prends le temps nécessaire pour obtenir un résultat propre et durable."
             />

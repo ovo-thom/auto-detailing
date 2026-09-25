@@ -14,7 +14,7 @@ export const contactInfos = [
   {
     icon: EnvelopeIcon,
     label: "E-mail",
-    value: "bonjour@ateliernacre.be",
+    value: "contact@flowdetailing.be",
   },
   {
     icon: MapPinIcon,
