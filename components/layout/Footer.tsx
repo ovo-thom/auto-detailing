@@ -57,7 +57,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="border-t border-white/10 py-5 text-center text-xs text-white/35">
+      <div className="border-t border-white/10 py-5 text-center text-xs text-white/55">
         © 2026 Flow Detailing · Tous droits réservés
       </div>
     </footer>

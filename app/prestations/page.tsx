@@ -48,7 +48,7 @@ export default function Prestations() {
                     {plan.name}
                   </h2>
 
-                  <p className="mt-2 text-sm leading-5 text-black/50 md:leading-6">
+                  <p className="mt-2 text-sm leading-5 text-black/60 md:leading-6">
                     {plan.desc}
                   </p>
 
@@ -58,7 +58,7 @@ export default function Prestations() {
                         {plan.price}€
                       </span>
 
-                      <span className="mb-1 text-xs text-black/40">
+                      <span className="mb-1 text-xs text-black/60">
                         à partir de
                       </span>
                     </div>
@@ -115,7 +115,7 @@ export default function Prestations() {
                         Produits professionnels
                       </p>
 
-                      <p className="mt-1 text-sm leading-6 text-black/50">
+                      <p className="mt-1 text-sm leading-6 text-black/60">
                         Adaptés à chaque surface.
                       </p>
                     </div>
@@ -125,7 +125,7 @@ export default function Prestations() {
                         Méthodes adaptées
                       </p>
 
-                      <p className="mt-1 text-sm leading-6 text-black/50">
+                      <p className="mt-1 text-sm leading-6 text-black/60">
                         Textile, cuir, Alcantara et plastiques.
                       </p>
                     </div>
@@ -135,7 +135,7 @@ export default function Prestations() {
                         Travail minutieux
                       </p>
 
-                      <p className="mt-1 text-sm leading-6 text-black/50">
+                      <p className="mt-1 text-sm leading-6 text-black/60">
                         Une attention portée jusque dans les moindres détails.
                       </p>
                     </div>

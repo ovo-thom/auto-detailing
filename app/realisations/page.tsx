@@ -54,7 +54,7 @@ export default function Realisations() {
               </h2>
             </div>
 
-            <p className="max-w-sm text-sm leading-6 text-black/50">
+            <p className="max-w-sm text-sm leading-6 text-black/60">
               Chaque galerie documente l’état initial, les étapes clés et les
               finitions obtenues.
             </p>
@@ -107,7 +107,7 @@ export default function Realisations() {
                 {step.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-black/50">
+              <p className="mt-3 text-sm leading-6 text-black/60">
                 {step.description}
               </p>
             </div>

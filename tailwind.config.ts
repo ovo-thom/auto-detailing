@@ -9,7 +9,7 @@ export default {
       colors: {
         ink: "#0B1114",
         aqua: "#10C7C3",
-        "aqua-dark": "#079A98",
+        "aqua-dark": "#067F7D",
         mist: "#E9F9F8",
       },
       fontFamily: {

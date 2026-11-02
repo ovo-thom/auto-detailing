@@ -146,13 +146,13 @@ export default function Home() {
             <div className="mt-9 grid grid-cols-2 gap-6 border-t border-black/10 pt-7">
               <div>
                 <b className="font-display text-lg">Produits adaptés</b>
-                <p className="mt-2 text-sm text-black/45">
+                <p className="mt-2 text-sm text-black/60">
                   Des produits adaptés à chaque matériau.
                 </p>
               </div>
               <div>
                 <b className="font-display text-lg">Résultat durable</b>
-                <p className="mt-2 text-sm text-black/45">
+                <p className="mt-2 text-sm text-black/60">
                   Une finition soignée à chaque intervention
                 </p>
               </div>

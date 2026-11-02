@@ -176,7 +176,7 @@ export default function ContactForm() {
         </label>
       </div>
 
-      <label className="mt-5 flex gap-3 text-xs leading-5 text-black/45">
+      <label className="mt-5 flex gap-3 text-xs leading-5 text-black/60">
         <input
           name="consent"
           onChange={(e) =>

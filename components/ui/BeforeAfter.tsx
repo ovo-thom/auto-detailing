@@ -69,7 +69,7 @@ export default function BeforeAfter({
         />
       </div>
       <p className="mt-4 font-display text-xl font-bold">{label}</p>
-      {subtitle && <p className="mt-1 text-sm text-black/50">{subtitle}</p>}
+      {subtitle && <p className="mt-1 text-sm text-black/60">{subtitle}</p>}
     </div>
   );
 }

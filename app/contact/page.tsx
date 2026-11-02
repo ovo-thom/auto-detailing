@@ -43,7 +43,7 @@ export default function Contact() {
                   <div>
                     <b className="text-xs uppercase tracking-widest">{label}</b>
 
-                    <p className="mt-1 text-sm text-black/50">
+                    <p className="mt-1 text-sm text-black/60">
                       {href ? (
                         <a href={href} className="hover:text-aqua-dark">
                           {value}
@@ -61,7 +61,7 @@ export default function Contact() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 inline-flex w-full items-center justify-center rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-bold text-white transition hover:-translate-y-1"
+              className="mt-10 inline-flex w-full items-center justify-center rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-bold text-ink transition hover:-translate-y-1"
             >
               Discuter sur WhatsApp →
             </a>
@@ -74,7 +74,7 @@ export default function Contact() {
       <section className="bg-ink py-16 text-white">
         <div className="container-site grid gap-8 md:grid-cols-2 md:items-center">
           <div>
-            <p className="eyebrow">Zone d’intervention</p>
+            <p className="eyebrow !text-aqua">Zone d’intervention</p>
 
             <h2 className="display text-xl md:text-2xl">
               Saint-Nicolas · Province de Liège.
