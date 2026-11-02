@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
 import BeforeAfter from "@/components/ui/BeforeAfter";
 import Cta from "@/components/sections/Cta";
@@ -67,10 +68,12 @@ export default function Realisations() {
                   i === 0 || i === 4 ? "xl:row-span-2" : ""
                 }`}
               >
-                <img
+                <Image
                   src={photo.src}
                   alt={photo.alt}
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  fill
+                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
                 />
               </figure>
             ))}

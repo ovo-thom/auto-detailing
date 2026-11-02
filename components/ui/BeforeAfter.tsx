@@ -1,5 +1,9 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+
+const imageSizes = "(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw";
+
 export default function BeforeAfter({
   before,
   after,
@@ -16,21 +20,29 @@ export default function BeforeAfter({
   return (
     <div className="group">
       <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-gray-100 shadow-soft">
-        <img
+        <Image
           src={after}
           alt={`${description} — résultat après nettoyage`}
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          sizes={imageSizes}
+          className="object-cover"
         />
         <div
           className="absolute inset-y-0 left-0 overflow-hidden"
           style={{ width: `${pos}%` }}
         >
-          <img
-            src={before}
-            alt={`${description} — état avant nettoyage`}
-            className="absolute inset-y-0 left-0 h-full w-full max-w-none object-cover "
+          <div
+            className="absolute inset-y-0 left-0"
             style={{ width: `${10000 / pos}%` }}
-          />
+          >
+            <Image
+              src={before}
+              alt={`${description} — état avant nettoyage`}
+              fill
+              sizes={imageSizes}
+              className="object-cover"
+            />
+          </div>
         </div>
         <div className="absolute bottom-4 left-4 rounded-full bg-ink/80 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
           Avant

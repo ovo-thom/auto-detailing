@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import ServicesPreview from "@/components/sections/ServicesPreview";
 import BeforeAfter from "@/components/ui/BeforeAfter";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -19,10 +20,13 @@ export default function Home() {
     <>
       <section className="container-site py-6">
         <div className="relative min-h-[560px] overflow-hidden rounded-[2.5rem] bg-ink md:min-h-[620px] lg:min-h-[650px]">
-          <img
+          <Image
             src={img.hero}
-            alt="Lavage extérieur d'une voiture noire"
-            className="absolute inset-0 h-full w-full object-cover opacity-55"
+            alt="Habitacle noir et poste de conduite d'une Audi"
+            fill
+            priority
+            sizes="(min-width: 1360px) 1280px, 100vw"
+            className="object-cover opacity-55"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent" />
           <div className="hex-bg absolute right-0 top-0 h-full w-1/3" />
@@ -111,9 +115,12 @@ export default function Home() {
       <section className="section-pad overflow-hidden">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
           <div className="relative">
-            <img
+            <Image
               src={img.workMethodImage}
               alt="Habitacle propre d’une Volkswagen Golf 8 après nettoyage intérieur"
+              width={457}
+              height={487}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="
             aspect-[4/5] w-full rounded-[2.5rem] object-cover
             min-[600px]:h-[440px] min-[500px]:aspect-auto
