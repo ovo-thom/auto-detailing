@@ -1,25 +1,27 @@
 import {
-  MapPinIcon,
   PhoneIcon,
   EnvelopeIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
+import { siteInfo } from "@/lib/site";
 
-export const contactInfos = [
+export const contactInfos: {
+  icon: typeof PhoneIcon;
+  label: string;
+  value: string;
+  href?: string;
+}[] = [
   {
     icon: PhoneIcon,
     label: "Téléphone",
-    value: "+32 491 95 41 61",
+    value: siteInfo.phone,
+    href: siteInfo.phoneHref,
   },
   {
     icon: EnvelopeIcon,
     label: "E-mail",
-    value: "contact@flowdetailing.be",
-  },
-  {
-    icon: MapPinIcon,
-    label: "Atelier",
-    value: "Saint-Nicolas · Province de Liège",
+    value: siteInfo.email,
+    href: siteInfo.emailHref,
   },
   {
     icon: ClockIcon,

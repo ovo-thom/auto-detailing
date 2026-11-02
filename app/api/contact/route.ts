@@ -10,9 +10,26 @@ export async function POST(request: Request) {
 
     const { name, phone, email, vehicle, service, message } = data;
 
+    const contactEmail = process.env.CONTACT_EMAIL;
+    const contactFromEmail = process.env.CONTACT_FROM_EMAIL;
+
+    if (!contactEmail || !contactFromEmail) {
+      console.error("CONTACT_EMAIL ou CONTACT_FROM_EMAIL manquant");
+
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Impossible d'envoyer la demande",
+        },
+        {
+          status: 500,
+        },
+      );
+    }
+
     const { data: emailData, error } = await resend.emails.send({
-      from: "Auto Detailing <onboarding@resend.dev>",
-      to: ["TON_ADRESSE_EMAIL"],
+      from: `Flow Detailing <${contactFromEmail}>`,
+      to: [contactEmail],
       subject: `Nouvelle demande de ${name}`,
       react: EmailTemplate({
         name,

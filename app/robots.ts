@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { siteInfo } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    // sitemap: "https://www.flow-detailing.be/sitemap.xml",
+    sitemap: `${siteInfo.url}/sitemap.xml`,
   };
 }

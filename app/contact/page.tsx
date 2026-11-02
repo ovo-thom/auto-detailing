@@ -1,70 +1,22 @@
-"use client";
-
 import PageHero from "@/components/ui/PageHero";
+import ContactForm from "@/components/sections/ContactForm";
 import { MapPinIcon } from "@heroicons/react/24/outline";
-import { contactInfos, serviceOptions, whatsappUrl } from "@/lib/contactData";
-import { useState } from "react";
+import { contactInfos, whatsappUrl } from "@/lib/contactData";
+import { pageMetadata } from "@/lib/metadata";
+import { siteInfo } from "@/lib/site";
+
+export const metadata = pageMetadata({
+  title: "Contact et devis à Saint-Nicolas (Liège)",
+  description:
+    "Demandez votre devis de nettoyage intérieur à Saint-Nicolas, près de Liège, par téléphone, WhatsApp ou formulaire. Du lundi au samedi, sur rendez-vous.",
+  path: "/contact",
+});
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    vehicle: "",
-    service: "Je souhaite être conseillé",
-    message: "",
-    consent: false,
-  });
-
-  const [error, setError] = useState("");
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const phoneDigits = formData.phone.replace(/\D/g, "");
-
-    if (phoneDigits.length < 9) {
-      setError("Veuillez entrer un numéro de téléphone valide.");
-      setIsSuccess(false);
-      return;
-    }
-
-    setError("");
-    setIsSuccess(false);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      console.log(data);
-
-      if (!response.ok) {
-        setError("Une erreur est survenue lors de l’envoi.");
-        setIsSuccess(false);
-        return;
-      }
-
-      setIsSuccess(true);
-    } catch (error) {
-      console.error(error);
-
-      setError("Une erreur est survenue lors de l’envoi.");
-      setIsSuccess(false);
-    }
-  };
-
   return (
     <>
       <PageHero
-        eyebrow="contact"
+        eyebrow="Contact · Nettoyage intérieur"
         title="Parlons de"
         accent="votre véhicule."
         text="Décrivez-moi l’état de votre véhicule et vos besoins. Je vous conseillerai la prestation la plus adaptée et vous communiquerai une estimation personnalisée."
@@ -82,7 +34,7 @@ export default function Contact() {
             </h2>
 
             <div className="mt-10 space-y-6">
-              {contactInfos.map(({ icon: Icon, label, value }) => (
+              {contactInfos.map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex gap-4">
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-mist">
                     <Icon className="h-5 w-5 text-aqua-dark" />
@@ -91,7 +43,15 @@ export default function Contact() {
                   <div>
                     <b className="text-xs uppercase tracking-widest">{label}</b>
 
-                    <p className="mt-1 text-sm text-black/50">{value}</p>
+                    <p className="mt-1 text-sm text-black/50">
+                      {href ? (
+                        <a href={href} className="hover:text-aqua-dark">
+                          {value}
+                        </a>
+                      ) : (
+                        value
+                      )}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -107,153 +67,7 @@ export default function Contact() {
             </a>
           </aside>
 
-          <form
-            onSubmit={handleSubmit}
-            className="rounded-[2rem] border border-black/10 bg-white p-6 shadow-soft md:p-10"
-          >
-            <div className="grid gap-6 md:grid-cols-2">
-              <label className="text-sm font-bold">
-                Nom complet
-                <input
-                  name="name"
-                  onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      name: e.target.value,
-                    })
-                  }
-                  required
-                  value={formData.name}
-                  placeholder="Votre nom"
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none transition focus:border-aqua"
-                />
-              </label>
-
-              <label className="text-sm font-bold">
-                Téléphone
-                <input
-                  name="phone"
-                  onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      phone: e.target.value,
-                    })
-                  }
-                  type="tel"
-                  value={formData.phone}
-                  required
-                  placeholder="+32 ..."
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
-                />
-                {error && (
-                  <p className="mt-2 text-xs font-normal text-red-500">
-                    {error}
-                  </p>
-                )}
-              </label>
-
-              <label className="text-sm font-bold">
-                E-mail
-                <input
-                  name="email"
-                  onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      email: e.target.value,
-                    })
-                  }
-                  required
-                  type="email"
-                  value={formData.email}
-                  placeholder="vous@email.be"
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
-                />
-              </label>
-
-              <label className="text-sm font-bold">
-                Véhicule
-                <input
-                  name="vehicle"
-                  onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      vehicle: e.target.value,
-                    })
-                  }
-                  required
-                  placeholder="Marque, modèle, année"
-                  value={formData.vehicle}
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
-                />
-              </label>
-
-              <label className="text-sm font-bold md:col-span-2">
-                Prestation souhaitée
-                <select
-                  name="service"
-                  onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      service: e.target.value,
-                    })
-                  }
-                  value={formData.service}
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
-                >
-                  {serviceOptions.map((option) => (
-                    <option key={option}>{option}</option>
-                  ))}
-                </select>
-              </label>
-
-              <label className="text-sm font-bold md:col-span-2">
-                État du véhicule et attentes
-                <textarea
-                  name="message"
-                  onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      message: e.target.value,
-                    })
-                  }
-                  rows={5}
-                  required
-                  value={formData.message}
-                  placeholder="Décrivez brièvement l’état de l’habitacle et vos besoins (taches, poils d’animaux, sellerie…)."
-                  className="mt-2 w-full resize-none rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
-                />
-              </label>
-            </div>
-
-            <label className="mt-5 flex gap-3 text-xs leading-5 text-black/45">
-              <input
-                name="consent"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    consent: e.target.checked,
-                  })
-                }
-                checked={formData.consent}
-                type="checkbox"
-                required
-                className="accent-aqua"
-              />
-              J’accepte que mes informations soient utilisées pour répondre à ma
-              demande.
-            </label>
-
-            <button className="btn-primary mt-7 w-full" type="submit">
-              Envoyer ma demande →
-            </button>
-
-            {isSuccess && (
-              <p className="mt-3 text-center text-sm font-normal text-green-500">
-                Votre demande a bien été envoyée. Je vous répondrai dès que
-                possible.
-              </p>
-            )}
-          </form>
+          <ContactForm />
         </div>
       </section>
 
@@ -267,9 +81,10 @@ export default function Contact() {
             </h2>
 
             <p className="mt-5 max-w-lg text-sm leading-7 text-white/50">
-              Les prestations sont réalisées sur rendez-vous à Saint-Nicolas.
-              Contactez-moi pour organiser la prise en charge de votre véhicule
-              et connaître les disponibilités.
+              Je reçois les clients de la commune et des environs :{" "}
+              {siteInfo.nearbyCitiesLabel}. Contactez-moi pour connaître les
+              disponibilités : l’adresse exacte vous est communiquée à la prise
+              de rendez-vous.
             </p>
           </div>
 

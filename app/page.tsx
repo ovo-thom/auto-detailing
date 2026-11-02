@@ -5,6 +5,15 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import Cta from "@/components/sections/Cta";
 import { MapPinIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { homeImages as img } from "@/lib/images";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "Nettoyage intérieur voiture à Saint-Nicolas (Liège)",
+  description:
+    "Flow Detailing propose le nettoyage intérieur et le detailing automobile à Saint-Nicolas, près de Liège. Un travail soigné, adapté à chaque véhicule.",
+  path: "/",
+});
+
 export default function Home() {
   return (
     <>
@@ -12,20 +21,20 @@ export default function Home() {
         <div className="relative min-h-[560px] overflow-hidden rounded-[2.5rem] bg-ink md:min-h-[620px] lg:min-h-[650px]">
           <img
             src={img.hero}
-            alt="Detailing d'un intérieur automobile"
+            alt="Lavage extérieur d'une voiture noire"
             className="absolute inset-0 h-full w-full object-cover opacity-55"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent" />
           <div className="hex-bg absolute right-0 top-0 h-full w-1/3" />
           <div className="relative flex min-h-[560px] max-w-3xl flex-col justify-center px-7 py-14 text-white md:min-h-[520px] md:px-12 md:py-16 lg:min-h-[650px] lg:px-16 lg:py-20">
-            <p className="mb-6 text-[11px] md:text-xs font-semibold md:font-bold uppercase tracking-[.26em] text-aqua">
-              Detailing intérieur · Liège
-            </p>
-            <h1 className="display text-5xl md:text-6xl lg:text-[88px]">
+            <h1 className="mb-6 text-[11px] md:text-xs font-semibold md:font-bold uppercase tracking-[.26em] text-aqua">
+              Nettoyage intérieur de voiture à Saint-Nicolas, près de Liège
+            </h1>
+            <p className="display text-5xl md:text-6xl lg:text-[88px]">
               Votre intérieur.
               <br />
               <span className="text-aqua">Comme neuf.</span>
-            </h1>
+            </p>
             <p className="mt-7 max-w-lg text-base leading-7 text-white/65">
               Chaque véhicule est différent. J'adapte le nettoyage à son état
               pour un résultat soigné jusque dans les moindres détails.
@@ -104,7 +113,7 @@ export default function Home() {
           <div className="relative">
             <img
               src={img.workMethodImage}
-              alt="Travail précis de detailing"
+              alt="Habitacle propre d’une Volkswagen Golf 8 après nettoyage intérieur"
               className="
             aspect-[4/5] w-full rounded-[2.5rem] object-cover
             min-[600px]:h-[440px] min-[500px]:aspect-auto

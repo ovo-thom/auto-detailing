@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { siteInfo } from "@/lib/site";
 export default function Footer() {
   return (
     <footer className="bg-ink text-white">
@@ -44,11 +45,15 @@ export default function Footer() {
             contact
           </p>
           <p className="text-sm leading-7 text-white/60">
-            Province de Liège
+            {siteInfo.location}
             <br />
-            +32 491 95 41 61
+            <a href={siteInfo.phoneHref} className="hover:text-aqua">
+              {siteInfo.phone}
+            </a>
             <br />
-            contact@flowdetailing.be
+            <a href={siteInfo.emailHref} className="hover:text-aqua">
+              {siteInfo.email}
+            </a>
           </p>
         </div>
       </div>

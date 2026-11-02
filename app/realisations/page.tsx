@@ -7,12 +7,20 @@ import {
   comparisonProjects,
   detailingSteps,
 } from "@/lib/realisationsData";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "Nettoyage intérieur voiture : photos avant / après",
+  description:
+    "Photos avant / après de nettoyage intérieur : Fiat Doblò, Volkswagen Golf 8 et Fiat 500. Flow Detailing, à Saint-Nicolas, près de Liège.",
+  path: "/realisations",
+});
 
 export default function Realisations() {
   return (
     <>
       <PageHero
-        eyebrow="réalisations"
+        eyebrow="Réalisations de nettoyage intérieur"
         title="Des résultats qui"
         accent="parlent d’eux-mêmes."
         text="Découvrez quelques transformations réalisées sur des véhicules aux états et besoins différents. Chaque intervention est adaptée pour obtenir le meilleur résultat possible."
@@ -27,6 +35,7 @@ export default function Realisations() {
                 before={project.before}
                 after={project.after}
                 label={project.name}
+                subtitle={project.subtitle}
               />
             ))}
           </div>

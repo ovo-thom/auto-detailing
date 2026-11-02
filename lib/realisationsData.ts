@@ -28,23 +28,23 @@ type DetailingStep = {
 export const galleryPhotos: GalleryPhoto[] = [
   {
     src: "/images/realisations/after/camionette_passager_apres.webp",
-    alt: "Habitacle propre d’une Volkswagen Golf 8",
+    alt: "Habitacle avant d’un Fiat Doblò après nettoyage intérieur",
   },
   {
     src: "/images/realisations/after/siege_arriere_apres.webp",
-    alt: "Habitacle propre d’une Fiat 500",
+    alt: "Banquette arrière d’une Volkswagen Golf 8 après nettoyage",
   },
   {
     src: "/images/after/apres_devant-propre.webp",
-    alt: "Habitacle propre d’un Fiat Doblò",
+    alt: "Habitacle avant d’une Volkswagen Golf 8 après nettoyage intérieur",
   },
   {
     src: "/images/realisations/after/fiat_500_conducteur_apres.webp",
-    alt: "Habitacle propre d’un Fiat Doblò",
+    alt: "Sièges en tissu rouge d’une Fiat 500 après nettoyage intérieur",
   },
   {
     src: "/images/apres_cockpit_cadre.webp",
-    alt: "Habitacle propre d’un Fiat Doblò",
+    alt: "Poste de conduite d’une Volkswagen Golf 8 après nettoyage",
   },
 ];
 

@@ -61,6 +61,10 @@ export const pricingOptions = [
 
 export const pricingFaq = [
   [
+    "Où se déroule la prestation ?",
+    "À Saint-Nicolas (4420), près de Liège. L’adresse exacte vous est communiquée à la prise de rendez-vous. Pour le moment, je ne me déplace pas à domicile.",
+  ],
+  [
     "Combien de temps faut-il laisser le véhicule ?",
     "De 2 à 8 heures selon la formule et l’état de l’habitacle. Une estimation plus précise vous est communiquée avant le rendez-vous.",
   ],
