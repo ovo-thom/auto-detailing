@@ -2,7 +2,11 @@ import PageHero from "@/components/ui/PageHero";
 import Cta from "@/components/sections/Cta";
 import PricingFaq from "@/components/sections/PricingFaq";
 import { pageMetadata } from "@/lib/metadata";
-import { pricingPlans, pricingOptions } from "@/lib/pricing";
+import {
+  pricingPlans,
+  pricingOptions,
+  pricingVehicleSizes,
+} from "@/lib/pricing";
 
 export const metadata = pageMetadata({
   title: "Tarifs nettoyage intérieur voiture à Saint-Nicolas",
@@ -34,17 +38,7 @@ export default function Prestations() {
                       : "border-black/10"
                   }`}
                 >
-                  {plan.popular && (
-                    <span className="absolute right-7 top-7 rounded-full bg-aqua px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-ink">
-                      LA PLUS CHOISIE
-                    </span>
-                  )}
-
-                  <span className="text-xs font-bold uppercase tracking-widest text-aqua-dark">
-                    {plan.time}
-                  </span>
-
-                  <h2 className="mt-4 font-display text-2xl font-bold md:text-2xl lg:text-3xl">
+                  <h2 className="font-display text-2xl font-bold md:text-2xl lg:text-3xl">
                     {plan.name}
                   </h2>
 
@@ -84,6 +78,31 @@ export default function Prestations() {
                   </a>
                 </article>
               ))}
+            </div>
+
+            <div className="mt-14">
+              <p className="eyebrow before:hidden">Selon la taille du véhicule</p>
+
+              <p className="-mt-3 text-sm leading-6 text-black/60">
+                Supplément ajouté au prix de la formule choisie.
+              </p>
+
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                {pricingVehicleSizes.map(([size, price]) => (
+                  <div
+                    key={size}
+                    className="flex items-center justify-between gap-4 rounded-[2rem] bg-ink px-7 py-6 sm:flex-col sm:items-start sm:justify-start"
+                  >
+                    <span className="text-sm text-white/70 md:text-base">
+                      {size}
+                    </span>
+
+                    <span className="font-display text-lg font-bold text-aqua md:text-xl">
+                      {price}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="mt-14 rounded-[2rem] border border-black/10 bg-mist/40 px-8 py-8 md:px-12 md:py-12">

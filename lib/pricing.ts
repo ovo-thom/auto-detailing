@@ -1,7 +1,6 @@
 export type PricingPlan = {
   name: string;
   price: string;
-  time: string;
   desc: string;
   items: string[];
   popular?: boolean;
@@ -11,12 +10,12 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: "Essentiel",
     price: "69",
-    time: "2–3h",
     desc: "Pour un habitacle entretenu ou légèrement sale.",
     items: [
-      "Aspiration complète",
-      "Nettoyage plastiques",
-      "Nettoyage des tapis",
+      "Aspiration complète (habitacle et coffre)",
+      "Aérations et recoins au pinceau",
+      "Nettoyage des plastiques",
+      "Nettoyage des tapis de sol",
       "Vitres intérieures",
       "Finitions et parfum léger",
     ],
@@ -24,12 +23,11 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: "Approfondi",
     price: "99",
-    time: "4–5h",
     desc: "Parfait pour les véhicules tachés ou très utilisés.",
     popular: true,
     items: [
       "Tout l’Essentiel",
-      "Nettoyage des sièges (tissu, cuir ou Alcantara)",
+      "Nettoyage des sièges : injection-extraction (tissu) ou nettoyage adapté (cuir, Alcantara)",
       "Injection-extraction des tapis et moquettes",
       "Détachage ciblé",
       "Nettoyage des ceintures",
@@ -38,18 +36,21 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: "Complet",
     price: "149",
-    time: "6–8h",
     desc: "Pour un résultat proche du neuf.",
     items: [
       "Tout l’Approfondi",
-      "Nettoyage détaillé des zones difficiles",
+      "Traitement et protection du cuir (si équipé)",
       "Protection des plastiques",
-      "Traitement du cuir (si équipé)",
-      "Nettoyage des rails de sièges",
-      "Nettoyage des aérations au pinceau",
-      "Finitions complètes",
+      "Rails et dessous des sièges",
+      "Encadrements et joints de portes",
     ],
   },
+];
+
+export const pricingVehicleSizes = [
+  ["Citadine / compacte", "Prix de base"],
+  ["Break / SUV", "+15 €"],
+  ["Monospace / utilitaire", "+30 €"],
 ];
 
 export const pricingOptions = [
