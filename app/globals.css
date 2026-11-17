@@ -10,6 +10,8 @@ html {
 body {
   color: #0b1114;
   background: #fff;
+  /* Archivo Black n'a qu'une graisse : évite le faux gras sur font-bold */
+  font-synthesis-weight: none;
 }
 ::selection {
   background: #10c7c3;

@@ -13,8 +13,8 @@ export default {
         mist: "#E9F9F8",
       },
       fontFamily: {
-        sans: ["Aptos", "Segoe UI", "Arial", "sans-serif"],
-        display: ["Arial Black", "Aptos Display", "Segoe UI", "sans-serif"],
+        sans: ["var(--font-figtree)", "Arial", "sans-serif"],
+        display: ["var(--font-archivo-black)", "Arial Black", "sans-serif"],
       },
       boxShadow: { soft: "0 24px 70px rgba(11,17,20,.09)" },
     },
