@@ -34,7 +34,7 @@ export default function Prestations() {
                   key={plan.name}
                   className={`relative rounded-[2rem] border p-6 md:p-8 lg:p-9 ${
                     plan.popular
-                      ? "border-aqua bg-mist/40 shadow-soft"
+                      ? "border-aqua bg-surface shadow-soft"
                       : "border-black/10"
                   }`}
                 >
@@ -105,7 +105,7 @@ export default function Prestations() {
               </div>
             </div>
 
-            <div className="mt-14 rounded-[2rem] border border-black/10 bg-mist/40 px-8 py-8 md:px-12 md:py-12">
+            <div className="mt-14 rounded-[2rem] border border-black/10 bg-surface px-8 py-8 md:px-12 md:py-12">
               <div className="grid gap-6 md:gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
                 <div>
                   <p className="eyebrow before:hidden">Le soin du détail</p>

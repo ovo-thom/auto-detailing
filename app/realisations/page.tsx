@@ -43,7 +43,7 @@ export default function Realisations() {
         </div>
       </section>
 
-      <section className="section-pad bg-[#f6f9f9]">
+      <section className="section-pad bg-surface">
         <div className="container-site">
           <div className="mb-9 flex flex-col justify-between gap-4 md:mb-12 md:flex-row md:items-end md:gap-5">
             <div>

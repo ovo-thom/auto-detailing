@@ -93,7 +93,7 @@ export default function Home() {
         </div>
       </section>
       <ServicesPreview />
-      <section className="section-pad bg-[#f6f9f9]">
+      <section className="section-pad bg-surface">
         <div className="container-site">
           <SectionTitle
             eyebrow="Avant / Après"

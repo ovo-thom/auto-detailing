@@ -78,7 +78,7 @@ export default function ContactForm() {
             required
             value={formData.name}
             placeholder="Votre nom"
-            className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none transition focus:border-aqua"
+            className="mt-2 w-full rounded-xl border border-black/10 bg-surface px-4 py-3.5 font-normal outline-none transition focus:border-aqua"
           />
         </label>
 
@@ -96,7 +96,7 @@ export default function ContactForm() {
             value={formData.phone}
             required
             placeholder="+32 ..."
-            className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
+            className="mt-2 w-full rounded-xl border border-black/10 bg-surface px-4 py-3.5 font-normal outline-none focus:border-aqua"
           />
           {error && (
             <p className="mt-2 text-xs font-normal text-red-500">{error}</p>
@@ -117,7 +117,7 @@ export default function ContactForm() {
             type="email"
             value={formData.email}
             placeholder="vous@email.be"
-            className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
+            className="mt-2 w-full rounded-xl border border-black/10 bg-surface px-4 py-3.5 font-normal outline-none focus:border-aqua"
           />
         </label>
 
@@ -134,7 +134,7 @@ export default function ContactForm() {
             required
             placeholder="Marque, modèle, année"
             value={formData.vehicle}
-            className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
+            className="mt-2 w-full rounded-xl border border-black/10 bg-surface px-4 py-3.5 font-normal outline-none focus:border-aqua"
           />
         </label>
 
@@ -149,7 +149,7 @@ export default function ContactForm() {
               })
             }
             value={formData.service}
-            className="mt-2 w-full rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
+            className="mt-2 w-full rounded-xl border border-black/10 bg-surface px-4 py-3.5 font-normal outline-none focus:border-aqua"
           >
             {serviceOptions.map((option) => (
               <option key={option}>{option}</option>
@@ -171,7 +171,7 @@ export default function ContactForm() {
             required
             value={formData.message}
             placeholder="Décrivez brièvement l’état de l’habitacle et vos besoins (taches, poils d’animaux, sellerie…)."
-            className="mt-2 w-full resize-none rounded-xl border border-black/10 bg-[#f8fafa] px-4 py-3.5 font-normal outline-none focus:border-aqua"
+            className="mt-2 w-full resize-none rounded-xl border border-black/10 bg-surface px-4 py-3.5 font-normal outline-none focus:border-aqua"
           />
         </label>
       </div>

@@ -12,7 +12,7 @@ export default function PageHero({
   text: string;
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-black/5 bg-[#f7fbfb]">
+    <section className="relative overflow-hidden border-b border-black/5 bg-surface">
       <div className="hex-bg absolute right-0 top-0 h-full w-1/3 opacity-80" />
       <div className="container-site relative py-12 md:py-16 lg:py-24">
         <h1 className="eyebrow">

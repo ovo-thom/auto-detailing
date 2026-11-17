@@ -11,6 +11,7 @@ export default {
         aqua: "#10C7C3",
         "aqua-dark": "#067F7D",
         mist: "#E9F9F8",
+        surface: "#EDF3F3",
       },
       fontFamily: {
         sans: ["var(--font-figtree)", "Arial", "sans-serif"],
